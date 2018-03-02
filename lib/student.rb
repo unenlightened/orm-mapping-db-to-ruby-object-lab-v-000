@@ -18,8 +18,7 @@ class Student
       FROM students
       WHERE name = ? ;
     SQL
-
-    row = 
+    
     self.new_from_db(DB[:conn].execute(sql, name))
   end
 
