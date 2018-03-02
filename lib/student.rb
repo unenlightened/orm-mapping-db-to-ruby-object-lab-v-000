@@ -21,7 +21,8 @@ class Student
       WHERE name = ?
     SQL
 
-    student = self.new_from_db(DB[:conn].execute(sql, name))
+    row = DB[:conn].execute(sql, name)
+    student = self.new_from_db()
   end
 
   def save
@@ -31,8 +32,6 @@ class Student
     SQL
 
     DB[:conn].execute(sql, self.name, self.grade)
-
-    binding.pry
   end
 
   def self.create_table
