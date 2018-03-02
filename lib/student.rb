@@ -31,8 +31,7 @@ class Student
       WHERE grade = 9
     SQL
 
-    result = DB[:conn].execute(sql)
-    binding.pry
+    DB[:conn].execute(sql).flatten
   end
 
   def save
