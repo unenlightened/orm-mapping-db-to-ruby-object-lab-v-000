@@ -19,7 +19,8 @@ class Student
       WHERE name = ? ;
     SQL
 
-    self.new_from_db(DB[:conn].execute(sql, name))
+    row = DB[:conn].execute(sql, name)
+    self.new_from_db(row)
     # find the student in the database given a name
     # return a new instance of the Student class
   end
