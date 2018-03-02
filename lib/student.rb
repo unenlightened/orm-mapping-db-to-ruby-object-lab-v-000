@@ -22,7 +22,7 @@ class Student
     SQL
 
     row = DB[:conn].execute(sql, name)
-    student = self.new_from_db(row)
+    student = self.new_from_db(row.flatten)
     binding.pry
   end
 
