@@ -16,7 +16,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE name = ?;
+      WHERE name = ? ;
     SQL
 
     self.new_from_db(DB[:conn].execute(sql, name))
