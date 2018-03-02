@@ -21,9 +21,7 @@ class Student
       WHERE name = ?
     SQL
 
-    row = DB[:conn].execute(sql, name)
-    student = self.new_from_db(row.first)
-    binding.pry
+   self.new_from_db(DB[:conn].execute(sql, name).flatten)
   end
 
   def save
