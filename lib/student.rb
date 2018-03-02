@@ -19,7 +19,7 @@ class Student
       WHERE name = #{name} ;
     SQL
 
-    self.new_from_db(DB[:conn].execute(sql, name))
+    self.new_from_db(DB[:conn].execute(sql))
   end
 
   def save
